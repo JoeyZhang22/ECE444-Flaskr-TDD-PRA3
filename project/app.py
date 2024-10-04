@@ -11,6 +11,7 @@ from flask import (
     jsonify,
 )
 import sqlite3
+import os
 
 
 # configuration
@@ -120,4 +121,4 @@ def delete_entry(post_id):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
